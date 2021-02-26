@@ -29,8 +29,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello Cruel World!'
+    #observationdoc = db.collection(u'Users').document(u'CH7wtgDf9cUc1ZprWYuSoa4CIk53').collection(u'Clients').document('New test client').collection("Sites").document("New test site").collection("Inspections").document("29 Jan 21").collection("Observations").document("2021-01-29T08:11:38.328245").get()
+    #observation = observationdoc.to_dict()
+    print(request.args.get('client'))
+    print(request.args.get('site'))
+    print(request.args.get('inspection'))
+    createDoc("New test client","New test site","12ja  21")
+    return send_file("test3.docx",attachment_filename="hello.docx")
+
 
 
 @app.errorhandler(500)
