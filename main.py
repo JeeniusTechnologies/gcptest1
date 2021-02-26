@@ -16,6 +16,20 @@
 import logging
 
 from flask import Flask
+from flask import Flask
+from flask import send_file
+import flask
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+import copy
+import base64
+import PIL.Image
+from docx import Document
+from copy import *
+import os
+from flask import request,render_template
+
 
 
 app = Flask(__name__)
